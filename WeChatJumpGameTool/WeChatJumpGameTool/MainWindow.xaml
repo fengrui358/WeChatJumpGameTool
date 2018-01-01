@@ -1,0 +1,39 @@
+﻿<Window x:Class="WeChatJumpGameTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeChatJumpGameTool"
+        mc:Ignorable="d"
+        Title="微信跳一跳辅助工具" MinWidth="450" SizeToContent="WidthAndHeight" Loaded="MainWindow_OnLoaded">
+    <Window.CommandBindings>
+        <CommandBinding Command="Find" Executed="MarkStartCommandExcute"/>
+        <CommandBinding Command="Help" Executed="JumpCommandExcute"/>
+    </Window.CommandBindings>
+    <Window.InputBindings>
+        <KeyBinding Key="F8" Command="Help"/>
+        <KeyBinding Key="F7" Command="Find"/>
+    </Window.InputBindings>
+    <Grid Margin="20,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="起点(F7)："/>
+            <TextBox x:Name="StartPoint" Grid.Column="1" Text="2779;595" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="终点(F8)："/>
+            <TextBox x:Name="EndPoint" Grid.Column="1" Text="3002;466" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>
