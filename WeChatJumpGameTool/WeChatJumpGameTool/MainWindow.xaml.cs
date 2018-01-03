@@ -51,7 +51,13 @@ namespace WeChatJumpGameTool
 
         #endregion
 
-        private readonly double _coefficient = 2.77002243950134;
+        private double _coefficient = 2.77002243950134;
+
+        public double Coefficient
+        {
+            get { return _coefficient; }
+            set { _coefficient = value; }
+        }
 
         public MainWindow()
         {
